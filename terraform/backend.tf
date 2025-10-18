@@ -1,7 +1,9 @@
+# Variables not allowed in backend.tf
+
 terraform {
     backend "s3" {
         bucket = "nikhil-devops-terraform-state-bucket"
         key = "global/s3/terraform.tfstate"
-        region = var.region
+        region = "ap-south-2"
     }
 }
