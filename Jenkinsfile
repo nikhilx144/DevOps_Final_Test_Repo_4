@@ -58,7 +58,7 @@ pipeline {
 
         stage('Deploy to EC2') {
             steps {
-                withAWS(credentials: 'aws_credentials', region: AWS_REGION) {
+                withCredentials([sshUserPrivateKey(credentialsId: 'ec2-ssh-key', keyFileVariable: 'SSH_KEY')]) {
                     sh """
                         ssh -o StrictHostKeyChecking=no -i \${SSH_KEY} ec2-user@${env.EC2_PUBLIC_IP} '
                             # Log in to ECR on the EC2 instance (requires AWS CLI and IAM Role on EC2)
