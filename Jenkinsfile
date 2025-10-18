@@ -70,7 +70,7 @@ pipeline {
                             # Pull the new image
                             sudo docker pull ${ECR_REPO_URI}:${BUILD_NUMBER}
                             
-                            # Stop and remove old container if it exists
+                            # Stop and remove the old container if it exists
                             sudo docker stop web-app || true
                             sudo docker rm web-app || true
                             
