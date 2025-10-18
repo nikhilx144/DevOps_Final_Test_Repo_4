@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce Product Grid</title>
+    <style>
+      :root {
+        --space-1: 25px;
+        --space-2: 22px;
+        --space-3: 20px;
+        --space-4: 18px;
+        --radius: 10px;
+        --brand: rgb(0, 102, 204);
+        --text: #000;
+        --muted: rgb(0, 102, 204);
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #e7e7e7;
+        padding: var(--space-1);
+      }
+
+      .star-rating {
+        font-size: 18px;
+        color: #ccc;
+      }
+
+      .star-rating .star-filled {
+        color: #f5a623;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--space-3);
+      }
+
+      header h1 {
+        color: var(--brand);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        /* border: 2px solid black; */
+        width: auto;
+        gap: var(--space-1);
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--text);
+        padding: 7px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: var(--space-3);
+        list-style: none;
+      }
+
+      .product-card {
+        border-radius: var(--radius);
+        padding: 10px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .product-price {
+        color: var(--muted);
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 16px;
+      }
+
+      .product-card:focus-within {
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+        transition: 0.3s ease;
+      }
+
+      .product-card img {
+        object-fit: cover;
+        aspect-ratio: 16 / 9;
+        border-radius: var(--radius);
+      }
+
+      .product-card h3 {
+        font-size: clamp(1rem, 1vw + 0.9rem, 1.25rem);
+      }
+
+      .add-to-cart-button {
+        width: 100%;
+        height: auto;
+        min-height: 40px;
+        border: none;
+        border-radius: 10px;
+        background-color: var(--brand);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      a:focus-visible,
+      .add-to-cart-button:focus-visible {
+        outline: 2px solid var(--brand);
+        outline-offset: 3px;
+        border-radius: var(--radius);
+      }
+
+      @media all and (max-width: 481px) {
+        .product-grid {
+          gap: var(--space-2);
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media all and (max-width: 260px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>BrandName</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Cart</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section aria-label="Products">
+        <ul class="product-grid">
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button" aria-label="Add ">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+          <li>
+            <div class="product-card">
+              <img
+                src="https://raw.githubusercontent.com/nikhilx144/Accelerator_Program/refs/heads/main/5-Day_Practical_Bootcamp/Day3_Tasks/E-Commerce_Product_Grid/assets/product-img.jpg"
+                alt="product-img"
+              />
+              <h3>Sample Product 1</h3>
+              <p class="product-price">$20.99</p>
+              <div class="star-rating">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star">★</span>
+              </div>
+              <button class="add-to-cart-button">Add</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script>
+      document.querySelectorAll(".product-card").forEach((card) => {
+        const productName = card.querySelector("h3").textContent.trim();
+        const button = card.querySelector(".add-to-cart-button");
+        button.setAttribute("aria-label", `Add ${productName} to card (demo)`);
+        console.log(`Updated aria-label: ${button.getAttribute("aria-label")}`);
+      });
+    </script>
+  </body>
+</html>
